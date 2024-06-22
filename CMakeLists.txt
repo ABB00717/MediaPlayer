@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 add_subdirectory(vendor/glfw)
 
-add_executable(MediaPlayer src/mediaPlayer.cpp)
+add_executable(MediaPlayer src/MediaPlayer.cpp)
 
 target_link_libraries(MediaPlayer
     glfw

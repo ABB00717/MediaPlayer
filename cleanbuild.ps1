@@ -1,8 +1,11 @@
-rm build
-mkdir build
+#!/bin/bash
 
+rm -rf build
+
+mkdir build
 cd build
-cmake -G "MinGW Makefiles" ..
-mingw32-make
+
+cmake -G "Unix Makefiles" ..
+make
 
 cd ..
