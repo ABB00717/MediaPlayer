@@ -1,5 +1,7 @@
 #include <iostream>
 #include "GLFW/glfw3.h"
+#include <libavcodec/avcodec.h>
+#include <libswscale/swscale.h>
 
 int main(int argc, char** argv) {
 	GLFWwindow* window;
