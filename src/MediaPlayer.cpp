@@ -13,7 +13,7 @@ int main(int argc, char** argv) {
     }
 
     gl_window->destroyWindow();
-    free(gl_window);
+    delete(gl_window);
 
 	return 0;
 }
