@@ -1,28 +1,19 @@
+#include "Window.hpp"
+
 #include <iostream>
-#include "GLFW/glfw3.h"
 #include <libavcodec/avcodec.h>
 #include <libswscale/swscale.h>
 
 int main(int argc, char** argv) {
-	GLFWwindow* window;
+	Window* gl_window = new Window(1280, 720, "MediaPlayer");
+    gl_window->initWindow();
 
-    if (!glfwInit()) {
-        std::cout << "ERROR: Couldn't initialize GLFW!" << std::endl;
-        return 1;
+    while (!gl_window->isWindowNotClosed()) {
+        gl_window->updateWindow();
     }
 
-    window = glfwCreateWindow(640, 480, "MediaPlayer", NULL, NULL);
-
-    if (!window) {
-        std::cout << "ERROR: Couldn't create window!" << std::endl;
-        return 1;
-    }
-
-    glfwMakeContextCurrent(window);
-    while (!glfwWindowShouldClose(window)) {
-        std::cout << "Hello" << std::endl;
-        glfwWaitEvents();
-    }
+    gl_window->destroyWindow();
+    free(gl_window);
 
 	return 0;
 }
